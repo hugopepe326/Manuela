@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Página de Manuela — Mis Poesías</title>
+<meta name="description" content="El rincón poético de Manuela: un espacio colorido para leer, escribir y soñar con poesías." />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        crema: '#FFF9F4',
+        rosa: { suave: '#FFE3EC', vivo: '#FF7BAC', fuerte: '#E65A8D' },
+        lila: { suave: '#EDE6F8', vivo: '#9B7EBD', fuerte: '#7A5CA6' },
+        menta: { suave: '#DDF5EC', vivo: '#5CC8AD', fuerte: '#3AA88A' },
+        melocoton: { suave: '#FFEEDD', vivo: '#FFB88C', fuerte: '#E8935A' },
+        cielo: { suave: '#E3F1FA', vivo: '#7FB5D5', fuerte: '#5A93B8' },
+        chocolate: '#4A3F55',
+        chocolateSuave: '#7A6E8A'
+      },
+      fontFamily: {
+        titulo: ['"Baloo 2"', 'cursive'],
+        cuerpo: ['Quicksand', 'sans-serif'],
+        mano: ['Caveat', 'cursive']
+      },
+      boxShadow: {
+        suave: '0 10px 30px -10px rgba(155,126,189,.35)',
+        tarjeta: '0 18px 40px -18px rgba(74,63,85,.25)',
+        boton: '0 8px 20px -6px rgba(230,90,141,.5)'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌷</text></svg>">
+</head>
+<body class="bg-crema text-chocolate font-cuerpo antialiased overflow-x-hidden">
+
+<!-- FONDO DECORATIVO -->
+<div class="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div id="estrellitas"></div>
+</div>
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-6xl mx-auto mt-4 mx-4 md:mx-auto bg-white/85 backdrop-blur-xl rounded-full shadow-tarjeta border border-white px-4 sm:px-6 py-3 flex items-center justify-between gap-2">
+    <a href="#inicio" class="flex items-center gap-2.5 group">
+      <span class="logo-flor">🌷</span>
+      <span class="leading-none">
+        <span class="block font-titulo font-800 font-bold text-lg sm:text-xl tracking-tight">La Página de <span class="texto-degradado">Manuela</span></span>
+        <span class="hidden sm:block text-[11px] uppercase tracking-[0.2em] text-chocolateSuave font-semibold">mi rincón de poesía</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-1 text-[15px] font-semibold">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#poesias" class="nav-link">Poesías</a>
+      <a href="#manuela" class="nav-link">Sobre mí</a>
+      <a href="#inspiracion" class="nav-link">Inspiración</a>
+      <a href="#escribe" class="nav-link-especial">✨ Escribir</a>
+    </div>
+    <button id="btn-menu" class="md:hidden w-11 h-11 grid place-items-center rounded-full bg-rosa-suave hover:bg-rosa-vivo hover:text-white transition-colors" aria-label="Abrir menú">☰</button>
+  </nav>
+  <div id="menu-movil" class="md:hidden hidden max-w-6xl mx-auto mt-2 mx-4 bg-white rounded-3xl shadow-tarjeta border border-rosa-suave p-3 space-y-1 font-semibold">
+    <a href="#inicio" class="menu-movil-link">🏠 Inicio</a>
+    <a href="#poesias" class="menu-movil-link">📖 Mis Poesías</a>
+    <a href="#manuela" class="menu-movil-link">🦋 Sobre mí</a>
+    <a href="#inspiracion" class="menu-movil-link">💡 Inspiración</a>
+    <a href="#escribe" class="menu-movil-link-destacado">✨ Escribir una poesía</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="pt-32 md:pt-40 pb-10 px-4">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <div class="inline-flex items-center gap-2 bg-white border border-lila-suave rounded-full px-4 py-2 shadow-suave text-sm font-semibold text-lila-fuerte mb-5">
+        <span class="w-2.5 h-2.5 rounded-full bg-menta-vivo animate-pulse"></span>
+        ¡Hola! Tengo 11 años y amo las palabras
+      </div>
+      <h1 class="font-titulo font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight">
+        LA PÁGINA<br>
+        DE <span class="texto-degradado">MANUELA</span> <span class="inline-block anim-salto">🌸</span>
+      </h1>
+      <p class="mt-5 text-lg text-chocolateSuave max-w-md leading-relaxed">
+        Un jardín de versos donde guardo mis sueños, mis amigas, mi gata y todas las cosas bonitas que veo. <strong class="text-chocolate">Pasa, lee y quédate a soñar.</strong>
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#poesias" class="btn-principal">📚 Leer mis poesías</a>
+        <a href="#escribe" class="btn-secundario">✏️ Publicar una nueva</a>
+      </div>
+      <div class="mt-8 flex gap-6 sm:gap-8">
+        <div class="text-center">
+          <p class="font-titulo font-extrabold text-3xl text-rosa-fuerte"><span id="contador-poemas">6</span></p>
+          <p class="text-xs uppercase tracking-widest font-bold text-chocolateSuave">poesías</p>
+        </div>
+        <div class="w-px bg-chocolate/10"></div>
+        <div class="text-center">
+          <p class="font-titulo font-extrabold text-3xl text-lila-fuerte"><span id="contador-likes">0</span> 💜</p>
+          <p class="text-xs uppercase tracking-widest font-bold text-chocolateSuave">me encanta</p>
+        </div>
+        <div class="w-px bg-chocolate/10"></div>
+        <div class="text-center">
+          <p class="font-titulo font-extrabold text-3xl text-menta-fuerte">∞</p>
+          <p class="text-xs uppercase tracking-widest font-bold text-chocolateSuave">imaginación</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta hero -->
+    <div class="reveal relative" style="transition-delay:.15s">
+      <div class="tarjeta-papel rotate-2 hover:rotate-0 transition-transform duration-500">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-3 h-3 rounded-full bg-rosa-vivo"></span>
+          <span class="w-3 h-3 rounded-full bg-melocoton-vivo"></span>
+          <span class="w-3 h-3 rounded-full bg-menta-vivo"></span>
+          <span class="ml-auto font-mano text-xl text-chocolateSuave">mi favorito ✿</span>
+        </div>
+        <h3 class="font-mano text-4xl font-bold text-chocolate leading-tight">La Luna Curiosa</h3>
+        <p class="font-mano text-2xl leading-snug mt-2 text-chocolate/90">
+          La luna me mira<br>
+          desde su balcón de estrellas,<br>
+          me guiña un ojito<br>
+          y me cuenta cosas bellas...
+        </p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="etiqueta" style="background:#EDE6F8;color:#7A5CA6">🌙 Naturaleza</span>
+          <button onclick="abrirPoema(0)" class="link-leer">Leer entero →</button>
+        </div>
+        <div class="cinta">✨</div>
+      </div>
+      <div class="flotante flotante-1">🦋</div>
+      <div class="flotante flotante-2">🌈</div>
+      <div class="flotante flotante-3">⭐</div>
+      <div class="flotante flotante-4">💌</div>
+    </div>
+  </div>
+
+  <!-- Ola divisoria -->
+  <div class="max-w-6xl mx-auto mt-12 flex flex-wrap justify-center gap-2.5 text-sm font-bold">
+    <span class="pill-categoria">🌷 Tierno</span>
+    <span class="pill-categoria">🌙 Soñador</span>
+    <span class="pill-categoria">🦋 Alegre</span>
+    <span class="pill-categoria">🌈 Colorido</span>
+    <span class="pill-categoria">💜 Sincero</span>
+  </div>
+</section>
+
+<!-- POESÍAS -->
+<section id="poesias" class="px-4 py-16 scroll-mt-24">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center reveal">
+      <p class="subtitulo">📖 mi colección</p>
+      <h2 class="titulo-seccion">Mis Poesías <span class="font-mano font-bold text-rosa-fuerte">favoritas</span></h2>
+      <p class="text-chocolateSuave max-w-xl mx-auto mt-3">Toca una tarjeta para leer el poema completo. ¡Puedes darles amor con el botón del corazón!</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 mt-8 reveal" id="filtros">
+      <button data-filtro="todas" class="filtro activo">Todas 🌼</button>
+      <button data-filtro="Naturaleza" class="filtro">🌿 Naturaleza</button>
+      <button data-filtro="Amistad" class="filtro">💛 Amistad</button>
+      <button data-filtro="Fantasía" class="filtro">🐉 Fantasía</button>
+      <button data-filtro="Sueños" class="filtro">☁️ Sueños</button>
+      <button data-filtro="Animales" class="filtro">🐾 Animales</button>
+    </div>
+
+    <div id="grid-poemas" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"></div>
+
+    <p id="mensaje-vacio" class="hidden text-center font-mano text-3xl text-chocolateSuave mt-8">Todavía no hay poesías aquí... ¡sé la primera en escribir una! 🌷</p>
+  </div>
+</section>
+
+<!-- SOBRE MANUELA -->
+<section id="manuela" class="px-4 py-8 scroll-mt-24">
+  <div class="max-w-6xl mx-auto bg-gradient-to-br from-white via-rosa-suave/60 to-lila-suave rounded-[2.5rem] shadow-tarjeta border border-white p-8 md:p-12 grid md:grid-cols-[280px_1fr] gap-10 items-center reveal overflow-hidden relative">
+    <div class="absolute -top-10 -right-10 text-[10rem] opacity-10 select-none pointer-events-none">🌸</div>
+    <div class="text-center">
+      <div class="avatar-manuela mx-auto">
+        <span class="text-8xl">👧🏻</span>
+        <span class="corona">👑</span>
+      </div>
+      <p class="font-mano text-3xl font-bold mt-3">¡Esa soy yo!</p>
+      <div class="flex justify-center gap-2 mt-2 text-sm font-bold">
+        <span class="etiqueta" style="background:#FFE3EC;color:#E65A8D">11 años</span>
+        <span class="etiqueta" style="background:#DDF5EC;color:#3AA88A">Soñadora</span>
+      </div>
+    </div>
+    <div>
+      <p class="subtitulo !text-left">🦋 hola, soy manuela</p>
+      <h2 class="titulo-seccion !text-left">Me encanta convertir sentimientos en <span class="texto-degradado">versitos</span></h2>
+      <p class="mt-4 text-chocolateSuave leading-relaxed">Escribo desde que tenía 8 años, en un cuaderno rosa con pegatinas. Me inspiran mi gata <strong class="text-chocolate">Nube</strong>, los recreos con mis amigas, la lluvia en la ventana y los cuentos antes de dormir. Esta página es mi cajita de tesoros: aquí guardo todos mis poemas para compartirlos contigo.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+        <div class="gusto">📚 Leer cuentos</div>
+        <div class="gusto">🎨 Dibujar</div>
+        <div class="gusto">🐱 Mi gata Nube</div>
+        <div class="gusto">🍓 Helado fresa</div>
+      </div>
+      <p class="font-mano text-2xl mt-6 text-lila-fuerte">— “Si puedes soñarlo, puedes versarlo.” ✍️💜</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSPIRACIÓN -->
+<section id="inspiracion" class="px-4 py-16 scroll-mt-24">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <p class="subtitulo">💡 rincón de ideas</p>
+    <h2 class="titulo-seccion">¿Sin ideas? Gira la <span class="font-mano text-menta-fuerte">ruleta mágica</span></h2>
+    <div class="mt-8 bg-white rounded-[2rem] shadow-tarjeta border-2 border-dashed border-lila-vivo/40 p-8 md:p-10 relative overflow-hidden">
+      <div class="text-5xl mb-3 anim-flota">🎡</div>
+      <p id="texto-inspiracion" class="font-mano text-3xl md:text-4xl leading-tight min-h-[5rem] grid place-items-center">Toca el botón y recibe una idea para tu próximo poema...</p>
+      <button id="btn-inspiracion" class="btn-principal mt-6">🪄 Dame inspiración</button>
+      <div class="mt-5 flex justify-center gap-2 text-sm font-bold text-chocolateSuave">
+        <span>Tip: combina la idea con algo que te pasó hoy 💭</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESCRIBE -->
+<section id="escribe" class="px-4 pb-20 pt-4 scroll-mt-24">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-start">
+    <div class="reveal">
+      <p class="subtitulo !text-left">✏️ publica aquí</p>
+      <h2 class="titulo-seccion !text-left">Escribe tu <span class="texto-degradado">nueva poesía</span></h2>
+      <p class="text-chocolateSuave mt-3">Llena los espacios con cariño. Tu poema aparecerá al instante en la colección y se guardará en este navegador, como en un diario secreto. 🔒</p>
+      <ul class="mt-6 space-y-3 font-semibold text-[15px]">
+        <li class="consejo"><span>1️⃣</span> Ponle un título bonito y corto.</li>
+        <li class="consejo"><span>2️⃣</span> Elige a qué se parece tu poema.</li>
+        <li class="consejo"><span>3️⃣</span> Escribe con el corazón, sin miedo a rimar.</li>
+      </ul>
+      <div class="mt-6 bg-melocoton-suave border border-melocoton-vivo/40 rounded-3xl p-5 flex gap-3 items-start">
+        <span class="text-3xl">🌟</span>
+        <p class="text-sm leading-relaxed"><strong>Consejo de Manuela:</strong> lee tu poema en voz alta. Si te hace sonreír, ¡está listo para publicarse!</p>
+      </div>
+    </div>
+
+    <form id="form-poema" class="reveal bg-white rounded-[2rem] shadow-tarjeta border border-white p-7 md:p-8 space-y-4" style="transition-delay:.1s">
+      <div>
+        <label class="label" for="titulo">Título de tu poesía 🌷</label>
+        <input id="titulo" required maxlength="60" placeholder="Ej: Mi verano feliz" class="input" autocomplete="off" />
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="label" for="categoria">Categoría 🗂️</label>
+          <select id="categoria" class="input">
+            <option>Naturaleza</option>
+            <option>Amistad</option>
+            <option>Fantasía</option>
+            <option>Sueños</option>
+            <option>Animales</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Dibujito 🎨</label>
+          <div id="selector-emoji" class="flex gap-2 flex-wrap"></div>
+        </div>
+      </div>
+
+      <!-- EDITOR CON FORMATO -->
+      <div>
+        <label class="label">Tu poema ✍️ <span class="font-normal text-chocolateSuave">— decóralo como quieras</span></label>
+        <div class="editor-caja">
+          <div class="toolbar" role="toolbar" aria-label="Herramientas de formato">
+            <button type="button" class="tool-btn font-extrabold" data-cmd="bold" title="Negrita">B</button>
+            <button type="button" class="tool-btn italic" data-cmd="italic" title="Cursiva">I</button>
+            <button type="button" class="tool-btn underline" data-cmd="underline" title="Subrayado">U</button>
+            <span class="tool-sep"></span>
+            <button type="button" class="tool-btn" data-cmd="justifyLeft" title="Alinear a la izquierda">⬅</button>
+            <button type="button" class="tool-btn" data-cmd="justifyCenter" title="Centrar">⬌</button>
+            <span class="tool-sep"></span>
+            <button type="button" class="tool-color" data-color="#E65A8D" style="background:#E65A8D" title="Rosa"> </button>
+            <button type="button" class="tool-color" data-color="#7A5CA6" style="background:#7A5CA6" title="Lila"> </button>
+            <button type="button" class="tool-color" data-color="#3AA88A" style="background:#3AA88A" title="Menta"> </button>
+            <button type="button" class="tool-color" data-color="#E8935A" style="background:#E8935A" title="Melocotón"> </button>
+            <button type="button" class="tool-color" data-color="#5A93B8" style="background:#5A93B8" title="Cielo"> </button>
+            <button type="button" class="tool-btn" data-cmd="removeFormat" title="Quitar formato">🧽</button>
+            <span class="tool-sep"></span>
+            <button type="button" class="tool-btn" id="tool-grande" title="Hacer letra más grande">A+</button>
+            <button type="button" class="tool-btn" id="tool-emoji" title="Agregar estrellita">⭐</button>
+          </div>
+          <div id="editor" contenteditable="true" class="editor" data-placeholder="Escribe aquí tus versos...&#10;✨ Selecciona una palabra y ponla en negrita, de colores...&#10;💜 Un verso por línea, como lluvia de palabras."></div>
+          <div class="flex items-center justify-between mt-1.5">
+            <p class="text-xs font-bold text-chocolateSuave">💡 Tip: selecciona texto para pintarlo de colores</p>
+            <p class="text-right text-xs font-bold text-chocolateSuave"><span id="contador-caracteres">0</span>/1200</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="label">Color de tu tarjeta 🌈</label>
+        <div id="selector-fondo" class="flex gap-2.5 flex-wrap"></div>
+      </div>
+
+      <!-- VISTA PREVIA EN VIVO -->
+      <div>
+        <label class="label">Así se verá tu poesía 👀✨</label>
+        <article id="vista-previa" class="vista-previa">
+          <div id="vp-emoji" class="text-4xl">🌷</div>
+          <h4 id="vp-titulo" class="font-titulo font-extrabold text-2xl mt-1 leading-tight">Tu título aquí...</h4>
+          <div id="vp-texto" class="font-mano text-[1.45rem] leading-snug mt-2 whitespace-pre-wrap">Tus versos aparecerán aquí con todos los colores... 🌸</div>
+          <p class="text-xs font-bold text-chocolateSuave mt-3">— <span id="vp-firma">Manuela</span> · <span id="vp-cat">Naturaleza</span></p>
+        </article>
+      </div>
+
+      <div>
+        <label class="label" for="firma">Firmado por 🦋</label>
+        <input id="firma" maxlength="30" placeholder="Manuela" class="input" autocomplete="off" />
+      </div>
+      <button type="submit" class="btn-publicar"><span class="btn-brillo"></span>🌸 Publicar mi poesía 🌸</button>
+      <p id="mensaje-exito" class="hidden text-center bg-menta-suave text-menta-fuerte font-bold rounded-2xl py-3 px-4">¡Yay! Tu poesía ya está publicada 🎉💜 ¡Búscala en la colección!</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="px-4 pb-10">
+  <div class="max-w-6xl mx-auto bg-chocolate text-white rounded-[2.5rem] p-10 md:p-12 text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-15 text-6xl overflow-hidden leading-snug select-none pointer-events-none">🌷 🌙 🦋 🌈 ⭐ 🍓 🌷 🌙 🦋 🌈 ⭐ 🍓</div>
+    <p class="font-titulo font-extrabold text-3xl md:text-4xl relative">Gracias por visitar<br><span class="texto-degradado-claro">La Página de Manuela</span> 🌸</p>
+    <p class="font-mano text-2xl text-white/80 mt-3 relative">“Que nunca te falten versos para los días grises”</p>
+    <div class="flex justify-center gap-3 mt-6 relative flex-wrap">
+      <a href="#inicio" class="footer-link">Inicio</a>
+      <a href="#poesias" class="footer-link">Poesías</a>
+      <a href="#escribe" class="footer-link">Escribir</a>
+    </div>
+    <p class="text-white/60 text-sm mt-8 relative">Hecha con 💜, purpurina y mucha imaginación · 2026</p>
+  </div>
+</footer>
+
+<!-- BOTÓN SUBIR -->
+<button id="btn-subir" class="hidden fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-rosa-vivo text-white text-xl shadow-boton hover:scale-110 transition-transform" aria-label="Volver arriba">↑</button>
+
+<!-- MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-[60] p-4 items-center justify-center">
+  <div id="modal-fondo" class="absolute inset-0 bg-chocolate/50 backdrop-blur-sm"></div>
+  <article class="relative bg-crema rounded-[2rem] shadow-tarjeta max-w-lg w-full max-h-[85vh] overflow-y-auto p-8 md:p-10 modal-papel">
+    <button id="modal-cerrar" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow hover:bg-rosa-vivo hover:text-white transition-colors font-bold" aria-label="Cerrar">✕</button>
+    <div id="modal-contenido"></div>
+  </article>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[70] bg-chocolate text-white font-bold px-6 py-3 rounded-full shadow-tarjeta opacity-0 pointer-events-none transition-all duration-300 translate-y-4"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
